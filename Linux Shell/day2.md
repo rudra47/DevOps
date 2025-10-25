@@ -83,3 +83,39 @@ cp practice.txt practice.backup.txt
 vim practice.txt
 # Add "Edited in Vim" at top
 ```
+
+**Evening (1-2 hours):**
+
+**৩. Searching + Finding:**
+
+```bash
+# Find text in files
+grep "error" logfile.txt
+grep -r "TODO" projects/    # search in all files
+grep -i "error" file.txt     # case insensitive
+grep -i -r "error" file.txt # search in all files with case insensitive
+
+# Find files
+find . -name "*.txt"
+find . -type f -name "test*"
+find /home -size +100M       # files larger than 100MB
+
+# Which command location
+which php
+which python3
+```
+
+**Mini Project:**
+```bash
+# Laravel error log analyzer script
+# Create: analyze_logs.sh
+
+#!/bin/bash
+echo "=== Laravel Error Log Analyzer ==="
+echo "Searching for errors..."
+
+grep -i "error" storage/logs/laravel.log | head -20
+echo ""
+echo "Total errors found:"
+grep -i "error" storage/logs/laravel.log | wc -l
+```
